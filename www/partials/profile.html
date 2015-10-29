@@ -1,0 +1,31 @@
+ <form name="photoForm" class="form-horizontal"  id="add-new-form" method="post" role="form"  novalidate>
+<p>
+      <tr ng-repeat="x in names">
+<img  src="{{ x.path_foto }}" id="imgProfile" ng-init="obtenerFotoPerfil(2)" ng-click="selImages()" style="width:100%;height:280px" ng-model="customer.photo">
+    </tr>
+     
+     <input name="id" class="form-control" type="text" value="{{request.ID}}" disabled />
+    
+     <button class="button widget uib_w_5 d-margins button-positive" ng-click="obtenerFotoPerfil(id)">uno</button>   
+     
+     <button class="button widget uib_w_5 d-margins button-balanced" ng-click="insertarFotoPerfil()">insertar</button>   
+     
+     <button class="button widget uib_w_5 d-margins button-energized" ng-click="actualizarFotoPerfil()">actualizar</button>    
+     
+    <button class="button widget uib_w_5 d-margins button-assertive" ng-click="eliminarFotoPerfil()">eliminar</button>    
+
+
+
+ <button class="button widget uib_w_5 d-margins button-royal" ng-click="obtenerFotosPerfil()">obtener todos</button> 
+
+<table>
+ 
+  <tr ng-repeat="x in names">
+    <td>{{ x.id }}&nbsp;</td>
+    <td>{{ x.nombre_usuario }}&nbsp;</td>
+    <td>{{ x.nombre_mascota }}&nbsp;</td>
+    <td>{{ x.nombre_foto }}&nbsp;</td>
+    <td>{{ x.path_foto }}&nbsp;</td>
+  </tr>
+</table>
+</form>
